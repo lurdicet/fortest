@@ -1,0 +1,29 @@
+import React, { useState } from "react";
+import "./styles.css";
+
+function SmallPuppy() {
+  const [isHovered, setIsHovered] = useState(false);
+
+  const handleMouseEnter = () => {
+    setIsHovered(true);
+  };
+
+  const handleMouseLeave = () => {
+    setIsHovered(false);
+  };
+
+  return (
+    <div className="container">
+      <img
+        className={`puppy-image ${isHovered ? "puppy-image-hover" : ""}`}
+        src="https://picsum.photos/200"
+        alt="small puppy"
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+      />
+      <p className="puppy-description">This is a cute small puppy!</p>
+    </div>
+  );
+}
+
+export default SmallPuppy;
